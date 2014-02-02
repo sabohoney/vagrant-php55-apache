@@ -16,7 +16,5 @@ vagrant up
 
 access http://10.10.10.10/ by your browser on the host machine.
 
-or simply
-
-`php -v` on the guest machine
+or simply `php -v` on the guest machine
 
