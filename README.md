@@ -6,6 +6,19 @@ php packages are installed via remi repository.
 
 ## How to use
 
+## add box
+
+you have to get a CentOS6.4 box
+see http://www.vagrantbox.es/
+
+```
+vagrant box add centos6.4 URL
+```
+
+
+
+## vagrant up
+
 ```
 git clone https://github.com/DQNEO/vagrant-php55-apache
 cd vagrant-php55-apache
