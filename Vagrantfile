@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -19,7 +20,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
+  # これはWindows用のエラー対策です。
+  # see http://blog.cles.jp/item/5698
   Encoding.default_external = 'UTF-8'
+
   config.vm.provision "shell" , path: "setup.sh"
 
   # The url from where the 'config.vm.box' box will be fetched if it
