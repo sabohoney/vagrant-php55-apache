@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-  # これはWindows用のエラー対策です。
+  # workaround for windows error
   # see http://blog.cles.jp/item/5698
   Encoding.default_external = 'UTF-8'
 
