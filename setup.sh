@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# epelレポジトリを追加
+# add epel repository
 rpm -Uvh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-8.noarch.rpm
-# remiレポジトリを追加
+# add remi repository
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
-# php5.5をインストール(Apacheも芋づる式についてくる)
-yum -y install --enablerepo=remi-php55 php php-mbstring
+# install php5.5 and apache
+yum -y install --enablerepo=remi-php55 php php-mbstring httpd
 
-# Apacheを起動
+# start apache
 service httpd start
 
-# index.phpを追加
+# add index.php to document root
 echo '<?php echo "PHP version " . PHP_VERSION . PHP_EOL;' > /var/www/html/index.php
 
-# 環境確認のためにinfo.phpファイルを作成
+# add info.php to see the environment
 echo '<?php phpinfo();' > /var/www/html/info.php
 
-# iptablesを停止
+# stop iptables
 service iptables stop
